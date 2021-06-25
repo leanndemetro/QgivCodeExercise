@@ -31,5 +31,20 @@
     font-size: 1rem;
 }
 
+.widget-total-funds {
+    margin-top: -15px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.08rem;
+    color: #784196;
+    font-weight: bold;
+}
+
+.widget-raised {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100, bold;
+    font-size: .7rem;
+    margin-top: -17px;
+}
+
 
 
