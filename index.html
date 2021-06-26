@@ -28,9 +28,9 @@
           Global Water Initiative
         </p>
         <span id="widget-thermometer">
-        <p class="widget-total-funds">
-          $1,158.00
-          </span>
+          <p id="widget-total-funds">
+            $1,158.00
+            </p>
         <div class="container">
           <div class="row">
             <div class="col">
@@ -52,9 +52,9 @@
         </div>
         <div class="widget-fundsCounter"></div>
         <div class="widget-fundsCounter-overlay"></div>
-      </span>
+        </span>
         <input value="Give Now!" type="submit" id="widget-submit">
-      <input type="submit" id="widget-input-submit-hidden">
+        <input type="submit" id="widget-input-submit-hidden">
       </div>
 
     </div>
@@ -71,12 +71,21 @@
         $("#widget-submit").replaceWith('<input type="input" placeholder="Enter Amount ($)" id="widget-input">');
         //create a submit butter appear to beneath the input with the id of widget-input-submit
         $("#widget-input-submit-hidden").replaceWith('<input value="Submit" type="submit" id="widget-input-submit">');
-        //create an onchange event that takes in the entered value as a variable called donationAmount
+        //create an onclick event that takes in the entered value as a variable called donationAmount
+        $("#widget-input-submit").click(function () {
+          let donationAmount = $("#widget-input").val();
+          updatedRaised(donationAmount);
+        });
         //pass that variable into a function that updates the value of #widget-total-funds
+        function updatedRaised(donationAmount) {
+          console.log(donationAmount);
+        }
         //change the innerHTML of widget-submit to say "Thank you!"
-        
+
 
       });
+
+
     });
 
   </script>
