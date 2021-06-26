@@ -30,28 +30,28 @@
         <span id="widget-thermometer">
           <p id="widget-total-funds">
             $1,158.00
-            </p>
-        <div class="container">
-          <div class="row">
-            <div class="col">
-              <p class="widget-raised">
-                0%
-              </p>
-            </div>
-            <div class="col">
-              <p class="widget-raised">
-                RAISED
-              </p>
-            </div>
-            <div class="col">
-              <p class="widget-raised">
-                100%
-              </p>
+          </p>
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <p class="widget-raised">
+                  0%
+                </p>
+              </div>
+              <div class="col">
+                <p class="widget-raised">
+                  RAISED
+                </p>
+              </div>
+              <div class="col">
+                <p class="widget-raised">
+                  100%
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="widget-fundsCounter"></div>
-        <div class="widget-fundsCounter-overlay"></div>
+          <div class="widget-fundsCounter"></div>
+          <div class="widget-fundsCounter-overlay"></div>
         </span>
         <input value="Give Now!" type="submit" id="widget-submit">
         <input type="submit" id="widget-input-submit-hidden">
@@ -73,13 +73,10 @@
         $("#widget-input-submit-hidden").replaceWith('<input value="Submit" type="submit" id="widget-input-submit">');
         //create an onclick event that takes in the entered value as a variable called donationAmount
         $("#widget-input-submit").click(function () {
-          let donationAmount = $("#widget-input").val();
-          updatedRaised(donationAmount);
+          console.log($("#widget-input").val());
+          localStorage.setItem("donateAmount", $("#widget-input").val())
         });
-        //pass that variable into a function that updates the value of #widget-total-funds
-        function updatedRaised(donationAmount) {
-          console.log(donationAmount);
-        }
+
         //change the innerHTML of widget-submit to say "Thank you!"
 
 
