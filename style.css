@@ -66,16 +66,57 @@
      background-color: #784196;
 }
 
-.widget-button {
+#widget-submit {
     padding: 8px;
     margin-top: 10px;
     width: 80%;
     background-color: #784196;
     color: white;
     border-radius: 5px;
-    border-color: #784196;
-    box-shadow: none;
-    cursor: pointer;
+    border-top: none;
+  border-right: none;
+  border-bottom: none;
+  border-left: none;
+  cursor: pointer;
+}
+
+#widget-submit:hover {
+    opacity: 0.8;
+}
+
+#widget-input {
+    margin-top: -20px;
+    padding: 8px;
+    width: 80%;
+    background-color: #784196;
+    color: white;
+    border-radius: 5px;
+    border-top: none;
+  border-right: none;
+  border-bottom: none;
+  border-left: none;
+  cursor: pointer;
+}
+#widget-input-submit-hidden {
+  display: none;
+}
+#widget-input-submit {
+    padding: 8px;
+    width: 80%;
+    background-color: #784196;
+    color: white;
+    border-radius: 5px;
+    border-top: none;
+  border-right: none;
+  border-bottom: none;
+  border-left: none;
+  cursor: pointer;
+    margin-top: 10px;
+    
+}
+
+#widget-input-submit:hover {
+    opacity: 0.8;
 }
 
 

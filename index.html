@@ -5,7 +5,7 @@
   <link rel="stylesheet" href="./style.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0" />
-  <title>Trigger Random</title>
+  <title>Code exercise - Qgiv</title>
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- Added link to the jQuery library -->
@@ -27,9 +27,10 @@
           The Water Project -
           Global Water Initiative
         </p>
+        <span id="widget-thermometer">
         <p class="widget-total-funds">
           $1,158.00
-        </p>
+          </span>
         <div class="container">
           <div class="row">
             <div class="col">
@@ -51,14 +52,34 @@
         </div>
         <div class="widget-fundsCounter"></div>
         <div class="widget-fundsCounter-overlay"></div>
-        <button class="widget-button">
-          Give Now!
-        </button>
+      </span>
+        <input value="Give Now!" type="submit" id="widget-submit">
+      <input type="submit" id="widget-input-submit-hidden">
       </div>
+
     </div>
   </div>
 
+  <script type="text/javascript">
 
+    $(document).ready(function () {
+
+      $("#widget-submit").on("click", function () {
+        //hide widget-thermometer
+        $("#widget-thermometer").hide();
+        //change submit type to input with an id of widget-input and a placeholder of Enter Amount ($)
+        $("#widget-submit").replaceWith('<input type="input" placeholder="Enter Amount ($)" id="widget-input">');
+        //create a submit butter appear to beneath the input with the id of widget-input-submit
+        $("#widget-input-submit-hidden").replaceWith('<input value="Submit" type="submit" id="widget-input-submit">');
+        //create an onchange event that takes in the entered value as a variable called donationAmount
+        //pass that variable into a function that updates the value of #widget-total-funds
+        //change the innerHTML of widget-submit to say "Thank you!"
+        
+
+      });
+    });
+
+  </script>
 
 </body>
 
