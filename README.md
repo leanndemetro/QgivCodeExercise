@@ -17,7 +17,7 @@
 </ul>   
 
 <h2>Description:</h2>
-<p>A coding exercise for the Qgiv organization</p>
+<p>A widget created to take in donation values and update a total raised thermometer counter; A code exercise for the Qgiv organization  </p>
 
 <h3>Contact information for any further questions:</h3>
      
