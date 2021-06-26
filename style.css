@@ -28,7 +28,7 @@
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
     padding: 10px;
-    font-size: 1rem;
+    font-size: 1.05rem;
 }
 
 .widget-total-funds {
@@ -45,6 +45,39 @@
     font-size: .7rem;
     margin-top: -17px;
 }
+
+.widget-fundsCounter {
+    width: 80%;
+    height: .5rem;
+    border-style: solid;
+     border-width: 1px;
+     border-color: grey;
+     margin-left: 22px;
+     margin-top: -8px;
+     background-color: white;
+    
+}
+
+.widget-fundsCounter-overlay {
+    width: 65%;
+    height: .5rem;
+     margin-left: 21px;
+     margin-top: -8px;
+     background-color: #784196;
+}
+
+.widget-button {
+    padding: 8px;
+    margin-top: 10px;
+    width: 80%;
+    background-color: #784196;
+    color: white;
+    border-radius: 5px;
+    border-color: #784196;
+    box-shadow: none;
+    cursor: pointer;
+}
+
 
 
 
