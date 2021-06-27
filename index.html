@@ -95,12 +95,15 @@
           //create a math function that adds the two together
           newTotal = parseInt(Raised) + parseInt(Donation);
           console.log(newTotal);
-          //set the totalRaised local storage item to the new total value
-          localStorage.setItem("totalRaised", newTotal);
-          //create a function that takes in the new totalRaised and updates the widget-thermometer widget-total-funds value to the new totalRaised value (appends it)
-          //write jquery to replace the widget-input element with the widget-thermometer span,
-          //create a function that replaces or changes the widget-fundsCounter-overlay element's width depending on the number's position in relativity to the total goal
+          //set the totalRaised local storage item to the new total value (comment out while in development)
+          // localStorage.setItem("totalRaised", newTotal);
+
+          //if totalRaised is less than 2000
+          //replace the widget-fundsCounter-overlay with a new element with a slightly wider CSS width than the original
+          //if totalRaised is equal to 2000 
+          //replace the widget-fundsCounter-overlay with a new element with a width of 100% of the thermometer
           //change the widget-submit area to a thank you/success message
+          //append a hard coded $ before the donation input area
 
         });
       });
