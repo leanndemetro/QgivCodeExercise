@@ -71,10 +71,8 @@
 
       //a mock ajax GET request
       function init() {
-        $.ajax({
-          url: "#",
-          method: "GET"
-        }).then(function (response) {
+        $.get("demo_test.com", function(response) {
+          console.log(response);
         });
         //sets a variable equal to a "mock" response value that may have been returned
         let mockResponse = "1158.00"
