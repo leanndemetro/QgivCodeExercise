@@ -98,7 +98,9 @@
 
           //set the totalRaised local storage item to the new total value (comment out while in development)
           // localStorage.setItem("totalRaised", newTotal);
-          
+
+          //replace the widget-input-submit element to a thank you/success message with a class name of success-message
+          $("#widget-input-submit").replaceWith('<p class="success-message"> Success! We thank you for your contribution</p>');
           //hide the widget-input
           $("#widget-input").hide();
           //show the widget-thermometer span
@@ -116,7 +118,7 @@
 
 
 
-          //change the widget-submit area to a thank you/success message
+          
           //append a hard coded $ before the donation input area
 
         });

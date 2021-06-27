@@ -140,6 +140,10 @@
     opacity: 0.8;
 }
 
-
+.success-message {
+    padding: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+}
 
 
