@@ -102,7 +102,7 @@
           newTotal = parseInt(Raised) + parseInt(donateAmount);
           console.log(newTotal);
 
-          $("#widget-total-funds").text(newTotal);
+          $("#widget-total-funds").text("$" + newTotal + ".00");
           //replace the widget-input-submit element to a thank you/success message with a class name of success-message
           $("#widget-input-submit").replaceWith('<p class="success-message"> Success! We thank you for your contribution</p>');
           //hide the widget-input
