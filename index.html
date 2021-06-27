@@ -30,7 +30,7 @@
         </p>
         <span id="widget-thermometer">
           <p id="widget-total-funds">
-            $1,158.00
+
           </p>
           <div class="container">
             <div class="row">
@@ -62,36 +62,47 @@
   </div>
 
   <script type="text/javascript">
-//create a variable equal to a $ that will be prepended to the widget-total-funds element 
-  //create a method to parse out the local storage item called totalRaised and dynamically append it to the widget-total-funds element
 
+    init();
+
+    function init() {
+      // create a method to parse out the local storage item called totalRaised
+      var displayedRaised = localStorage.getItem("totalRaised");
+      //append it to the widget-total-funds element (with a dollar sign)
+      if (displayedRaised !== null) {
+        $("#widget-total-funds").text("$" + displayedRaised);
+      }
+    };
 
     $(document).ready(function () {
 
       $("#widget-submit").on("click", function () {
-        //set a local storage item called totalRaised equal to widget-total fund's current value
-
         //hide widget-thermometer
         $("#widget-thermometer").hide();
         //change submit type to input with an id of widget-input and a placeholder of Enter Amount ($)
         $("#widget-submit").replaceWith('<input type="input" placeholder="Enter Amount ($)" id="widget-input">');
         //create a submit button that appears beneath the input with the id of widget-input-submit
         $("#widget-input-submit-hidden").replaceWith('<input value="Donate!" type="submit" id="widget-input-submit">');
+
         //create an onclick event that takes in the entered value and console logs it, and sets a local storage item called donateAmount to it's value
         $("#widget-input-submit").click(function () {
-          console.log($("#widget-input").val());
           localStorage.setItem("donateAmount", $("#widget-input").val())
+
+          //parse out the totalRaised local storage item value, set it equal to a variable
+          let Raised = localStorage.getItem("totalRaised");
+          //parse out the donateAmount local storage item value, set it equal to a variable
+          let Donation = localStorage.getItem("donateAmount");
+          //create a math function that adds the two together
+          newTotal = parseInt(Raised) + parseInt(Donation);
+          console.log(newTotal);
+          //set the totalRaised local storage item to the new total value
+          localStorage.setItem("totalRaised", newTotal);
+          //create a function that takes in the new totalRaised and updates the widget-thermometer widget-total-funds value to the new totalRaised value (appends it)
+          //write jquery to replace the widget-input element with the widget-thermometer span,
+          //create a function that replaces or changes the widget-fundsCounter-overlay element's width depending on the number's position in relativity to the total goal
+          //change the widget-submit area to a thank you/success message
+
         });
-        //parse out the totalRaised local storage item value
-        //parse out the donateAmount local storage item value
-        //create a math function that adds the two together
-        //set the totalRaised local storage item to the new total value
-        //create a function that takes in the new totalRaised and updates the widget-thermometer widget-total-funds value to the new totalRaised value (appends it)
-        //write jquery to replace the widget-input element with the widget-thermometer span,
-        //create a function that replaces or changes the widget-fundsCounter-overlay element's width depending on the number's position in relativity to the total goal
-        //change the widget-submit area to a thank you/success message
-
-
       });
 
 
