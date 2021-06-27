@@ -95,13 +95,27 @@
           //create a math function that adds the two together
           newTotal = parseInt(Raised) + parseInt(Donation);
           console.log(newTotal);
+
           //set the totalRaised local storage item to the new total value (comment out while in development)
           // localStorage.setItem("totalRaised", newTotal);
+          
+          //hide the widget-input
+          $("#widget-input").hide();
+          //show the widget-thermometer span
+          $("#widget-thermometer").show();
+          //if newTotal is less than 2000
+          if (newTotal < 2000) {
+            //replace the widget-fundsCounter-overlay with a new element called widget-overlay-partial
+            $(".widget-fundsCounter-overlay").replaceWith('<div class="widget-overlay-partial"></div>');
+            //if newTotal is equal to 2000 
+          } else if (newTotal += 2000) {
+            //replace the widget-fundsCounter-overlay with a new element with a width of 100% of the thermometer
+            $(".widget-fundsCounter-overlay").replaceWith('<div class="widget-overlay-complete"></div>');
+          }
 
-          //if totalRaised is less than 2000
-          //replace the widget-fundsCounter-overlay with a new element with a slightly wider CSS width than the original
-          //if totalRaised is equal to 2000 
-          //replace the widget-fundsCounter-overlay with a new element with a width of 100% of the thermometer
+
+
+
           //change the widget-submit area to a thank you/success message
           //append a hard coded $ before the donation input area
 

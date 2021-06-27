@@ -65,6 +65,21 @@
      margin-top: -8px;
      background-color: #784196;
 }
+.widget-overlay-partial {
+    width: 75%;
+    height: .5rem;
+     margin-left: 21px;
+     margin-top: -8px;
+     background-color: #784196;
+}
+.widget-overlay-complete {
+    width: 80%;
+    height: .5rem;
+     margin-left: 21px;
+     margin-top: -8px;
+     background-color: #784196;
+}
+
 
 #widget-submit {
     padding: 8px;
