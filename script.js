@@ -4,11 +4,10 @@ init();
 
 function init() {
   // create a method to parse out the local storage item called totalRaised
-  localStorage.setItem("totalRaised", 1158);
   var displayedRaised = localStorage.getItem("totalRaised");
   //append it to the widget-total-funds element (with a dollar sign)
   if (displayedRaised !== null) {
-    $("#widget-total-funds").text("$" + displayedRaised);
+    $("#widget-total-funds").text("$" + displayedRaised + ".00");
   }
 };
 
@@ -20,10 +19,20 @@ $(document).ready(function () {
     $("#widget-thermometer").hide();
     
     //change submit type to input with an id of widget-input and a placeholder of Enter Amount ($)
-    $("#widget-submit").replaceWith('<input type="input" placeholder="Enter Amount ($)" id="widget-input">');
+    $("#widget-submit").replaceWith('<input type="number tel" placeholder="Enter Amount ($)" id="widget-input">');
     
     //create a submit button that appears beneath the input with the id of widget-input-submit
     $("#widget-input-submit-hidden").replaceWith('<input value="Donate!" type="submit" id="widget-input-submit">');
+    
+    //disable widget-input-submit
+    $('#widget-input-submit').attr('disabled',true);
+
+    //if widget-input has a value entered, enable widget-input-submit
+    $('#widget-input').keyup(function(){
+        if($(this).val.length !=0){
+            $('#widget-input-submit').attr('disabled', false);
+        }
+    })
 
     //create an onclick event that takes in the entered value and console logs it, and sets a local storage item called donateAmount to it's value
     $("#widget-input-submit").click(function () {
@@ -37,7 +46,9 @@ $(document).ready(function () {
       
       //create a math function that adds the two together
       newTotal = parseInt(Raised) + parseInt(Donation);
-      console.log(newTotal);
+      
+      //formats newTotal to inclue 2 decimal spaces and sets it equal to a new variable called formattedTotal
+      var formattedTotal = newTotal.toFixed(2);
 
       //set the totalRaised local storage item to the new total value (comment out while in development)
       // localStorage.setItem("totalRaised", newTotal);
@@ -52,7 +63,7 @@ $(document).ready(function () {
       $("#widget-thermometer").show();
       
       //update the widget-total-funds html to the newTotal value
-      $("#widget-total-funds").text("$" + newTotal);
+      $("#widget-total-funds").text("$" + formattedTotal);
       
       //if newTotal is less than 2000
       if (newTotal < 2000) {
@@ -62,7 +73,7 @@ $(document).ready(function () {
         //if newTotal is equal to 2000 
       } else if (newTotal += 2000) {
         
-        //replace the widget-fundsCounter-overlay with a new element with a width of 100% of the thermometer
+        //replace the widget-fundsCounter-overlay with a new element called wigdet-overlay-complete
         $(".widget-fundsCounter-overlay").replaceWith('<div class="widget-overlay-complete"></div>');
       }
 
