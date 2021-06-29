@@ -19,7 +19,7 @@ $(document).ready(function () {
     $("#widget-thermometer").hide();
     
     //change submit type to input with an id of widget-input and a placeholder of Enter Amount ($)
-    $("#widget-submit").replaceWith('<input type="number tel" placeholder="Enter Amount ($)" id="widget-input">');
+    $("#widget-submit").replaceWith('<input type="number" placeholder="Enter Amount ($)" id="widget-input">');
     
     //create a submit button that appears beneath the input with the id of widget-input-submit
     $("#widget-input-submit-hidden").replaceWith('<input value="Donate!" type="submit" id="widget-input-submit">');
@@ -31,6 +31,13 @@ $(document).ready(function () {
     $('#widget-input').keyup(function(){
         if($(this).val.length !=0){
             $('#widget-input-submit').attr('disabled', false);
+        }
+    })
+
+    //ensure the e, backspace, and not-numerical values aren't able to be entered within widget-input
+    $('#widget-input').keydown(function(evt){
+        if(evt.which != 8 && evt.which != 0 && evt.which < 48 || evt.which > 57){
+            evt.preventDefault();
         }
     })
 
