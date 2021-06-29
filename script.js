@@ -82,10 +82,7 @@ $(document).ready(function () {
 
             //formats newTotal to inclue 2 decimal spaces and sets it equal to a new variable called formattedTotal
             var formattedTotal = newTotal.toFixed(2);
-
-            //perform an ajax POST request with local storage values pulled in for clientName, donationTotal, and current raisedFunds
-
-
+            
             //set the totalRaised local storage item to the newTotal value (comment out while in development)
             // localStorage.setItem("totalRaised", newTotal);
 
