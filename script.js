@@ -28,9 +28,9 @@ $(document).ready(function () {
         url: "mock-ajax.com",
         type: "get",
         data: { 
-          Name: Name, 
-          Goal: Goal, 
-          Raised: Raised
+          Name: "Name", 
+          Goal: "Goal", 
+          Raised: "Raised"
         },
         //parse this data out and update local storage items with the values 
         success: function(response) {
