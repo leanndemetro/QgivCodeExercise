@@ -106,6 +106,8 @@
           $("#widget-input").hide();
           //show the widget-thermometer span
           $("#widget-thermometer").show();
+          //updated the widget-total-funds html to the newTotal value
+          $("#widget-total-funds").text("$" + newTotal);
           //if newTotal is less than 2000
           if (newTotal < 2000) {
             //replace the widget-fundsCounter-overlay with a new element called widget-overlay-partial
