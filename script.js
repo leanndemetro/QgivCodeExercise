@@ -7,8 +7,12 @@ function init() {
   var displayedRaised = localStorage.getItem("totalRaised");
   // create a local storage item that will store the client's name
   localStorage.setItem("clientName", "the-water-project");
+  //log this data to the console
+  console.log("clientName: " + localStorage.getItem("clientName"));
   // create a local storage item that will store the client's donation goal
   localStorage.setItem("donationGoal", "2000");
+  //log this data to the console
+  console.log("donationGoal: $" + localStorage.getItem("donationGoal"));
   //append it to the widget-total-funds element (with a dollar sign)
   if (displayedRaised !== null) {
     $("#widget-total-funds").text("$" + displayedRaised + ".00");
@@ -17,6 +21,7 @@ function init() {
 
 $(document).ready(function () {
 
+    //when widget-submit is clicked
   $("#widget-submit").on("click", function () {
     
     //hide widget-thermometer
@@ -93,7 +98,6 @@ $(document).ready(function () {
 
 
       //append a hard coded $ before the donation input area
-      //format funds and donation values to be in USD decimal format
 
     });
   });
