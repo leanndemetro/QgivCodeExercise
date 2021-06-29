@@ -23,7 +23,30 @@ $(document).ready(function () {
 
     //when widget-submit is clicked
   $("#widget-submit").on("click", function () {
+    //perform an ajax GET request that takes in mock data for clientName, donationTotal, and current raisedFunds
+    $.ajax({
+        url: "mock-ajax.com",
+        type: "get",
+        data: { 
+          Name: "the-water-project", 
+          Goal: "2000", 
+          Raised: "1158"
+        },
+        //parse this data out and update local storage items with the values 
+        success: function(response) {
+          //update local storage item clientName
+          localStorage.setItem("clientName", (response.data.Name));
+          //update local storage item donationGoal
+          localStorage.setItem("donationGoal", (response.data.Goal));
+          //update local storage item raisedFunds
+          localStorage.setItem("raisedFunds", (response.data.Raised));
+        },
+        error: function(err) {
+            console.log(err);
+        }
+      });
     
+
     //hide widget-thermometer
     $("#widget-thermometer").hide();
     
@@ -43,7 +66,7 @@ $(document).ready(function () {
         }
     })
 
-    //ensure not-numerical values aren't able to be entered within widget-input
+    //ensure non-numerical values aren't able to be entered within widget-input
     $('#widget-input').keydown(function(evt){
         if(evt.which != 8 && evt.which != 0 && evt.which < 48 || evt.which > 57){
             evt.preventDefault();
@@ -66,7 +89,10 @@ $(document).ready(function () {
       //formats newTotal to inclue 2 decimal spaces and sets it equal to a new variable called formattedTotal
       var formattedTotal = newTotal.toFixed(2);
 
-      //set the totalRaised local storage item to the new total value (comment out while in development)
+      //perform an ajax POST request with local storage values pulled in for clientName, donationTotal, and current raisedFunds
+
+
+      //set the totalRaised local storage item to the newTotal value (comment out while in development)
       // localStorage.setItem("totalRaised", newTotal);
 
       //replace the widget-input-submit element to a thank you/success message with a class name of success-message
