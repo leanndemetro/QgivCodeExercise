@@ -5,6 +5,10 @@ init();
 function init() {
   // create a method to parse out the local storage item called totalRaised
   var displayedRaised = localStorage.getItem("totalRaised");
+  // create a local storage item that will store the client's name
+  localStorage.setItem("clientName", "the-water-project");
+  // create a local storage item that will store the client's donation goal
+  localStorage.setItem("donationGoal", "2000");
   //append it to the widget-total-funds element (with a dollar sign)
   if (displayedRaised !== null) {
     $("#widget-total-funds").text("$" + displayedRaised + ".00");
@@ -41,15 +45,15 @@ $(document).ready(function () {
         }
     })
 
-    //create an onclick event that takes in the entered value and console logs it, and sets a local storage item called donateAmount to it's value
+    //create an onclick event that takes in the entered value and console logs it, and sets a local storage item called donationAmount to it's value
     $("#widget-input-submit").click(function () {
-      localStorage.setItem("donateAmount", $("#widget-input").val())
+      localStorage.setItem("donationAmount", $("#widget-input").val())
 
       //parse out the totalRaised local storage item value, set it equal to a variable
       let Raised = localStorage.getItem("totalRaised");
       
-      //parse out the donateAmount local storage item value, set it equal to a variable
-      let Donation = localStorage.getItem("donateAmount");
+      //parse out the donationAmount local storage item value, set it equal to a variable
+      let Donation = localStorage.getItem("donationAmount");
       
       //create a math function that adds the two together
       newTotal = parseInt(Raised) + parseInt(Donation);
