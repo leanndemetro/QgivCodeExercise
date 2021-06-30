@@ -20,7 +20,9 @@
 <p>A widget created to take in donation values and update a total raised thermometer counter; A code exercise for the Qgiv organization  </p>
 
 <h3>Contact information for any further questions:</h3>
-     
+        
+<a href="https://leanndemetro.github.io/QgivCodeExercise/"> Click here for a delpoyed versia via Github pages</a>  
+<br>
 <a href="https://github.com/leanndemetro/QgivCodeExercise"> Click here for my Github Repository </a>
 <br>
 <a href="https://www.linkedin.com/in/alyssa-de-metro-59abba1b0/"> Click here for my LinkedIn profile </a>
