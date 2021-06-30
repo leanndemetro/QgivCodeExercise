@@ -21,7 +21,7 @@
 
 <h3>Contact information for any further questions:</h3>
         
-<a href="https://leanndemetro.github.io/QgivCodeExercise/"> Click here for a delpoyed versia via Github pages</a>  
+<a href="https://leanndemetro.github.io/QgivCodeExercise/"> Click here for a delpoyed version via Github pages</a>  
 <br>
 <a href="https://github.com/leanndemetro/QgivCodeExercise"> Click here for my Github Repository </a>
 <br>
