@@ -13,14 +13,14 @@ function init() {
   var displayedRaised = localStorage.getItem("totalRaised");
   //append it to the widget-total-funds element (with a dollar sign)
   if (displayedRaised !== null) {
-    $("#widget-total-funds").text("$" + displayedRaised + ".00");
+    $(".widget__total__funds").text("$" + displayedRaised + ".00");
   }
 };
 
 $(document).ready(function () {
 
-    //when widget-submit is clicked
-  $("#widget-submit").on("click", function () {
+    //when widget__submit is clicked
+  $(".widget__submit").on("click", function () {
     //perform an ajax GET request that takes in mock data for clientName, donationTotal, and current raisedFunds
     $.ajax({
         url: "mock-ajax.com",
@@ -46,35 +46,35 @@ $(document).ready(function () {
       });
     
 
-    //hide widget-thermometer
-    $("#widget-thermometer").hide();
+    //hide widget__thermometer__container
+    $(".widget__thermometer__container").hide();
     
-    //change submit type to input with an id of widget-input and a placeholder of Enter Amount ($)
-    $("#widget-submit").replaceWith('<input type="number" placeholder="Enter Amount ($)" id="widget-input">');
+    //change submit type to input with an id of widget__input and a placeholder of Enter Amount ($)
+    $(".widget__submit").replaceWith('<input type="number" placeholder="Enter Amount ($)" class="widget__input">');
     
-    //create a submit button that appears beneath the input with the id of widget-input-submit
-    $("#widget-input-submit-hidden").replaceWith('<input value="Donate!" type="submit" id="widget-input-submit">');
+    //create a submit button that appears beneath the input with the id of widget__input__submit
+    $(".widget__input__submit--hidden").replaceWith('<input value="Donate!" type="submit" class="widget__input__submit">');
     
-    //disable widget-input-submit
-    $('#widget-input-submit').attr('disabled',true);
+    //disable widget__input__submit
+    $('.widget__input__submit').attr('disabled',true);
 
-    //if widget-input has a value entered, enable widget-input-submit
-    $('#widget-input').keyup(function(){
+    //if widget__input has a value entered, enable widget__input__submit
+    $('.widget__input').keyup(function(){
         if($(this).val.length !=0){
-            $('#widget-input-submit').attr('disabled', false);
+            $('.widget__input__submit').attr('disabled', false);
         }
     })
 
-    //ensure non-numerical values aren't able to be entered within widget-input
-    $('#widget-input').keydown(function(evt){
+    //ensure non-numerical values aren't able to be entered within widget__input
+    $('.widget__input').keydown(function(evt){
         if(evt.which != 8 && evt.which != 0 && evt.which < 48 || evt.which > 57){
             evt.preventDefault();
         }
     })
 
     //create an onclick event that takes in the entered value and console logs it, and sets a local storage item called donationAmount to it's value
-    $("#widget-input-submit").click(function () {
-      localStorage.setItem("donationAmount", $("#widget-input").val())
+    $(".widget__input__submit").click(function () {
+      localStorage.setItem("donationAmount", $(".widget__input").val())
 
       //parse out the totalRaised local storage item value, set it equal to a variable
       let Raised = localStorage.getItem("totalRaised");
@@ -94,28 +94,28 @@ $(document).ready(function () {
       //set the totalRaised local storage item to the newTotal value (comment out while in development)
       // localStorage.setItem("totalRaised", newTotal);
 
-      //replace the widget-input-submit element to a thank you/success message with a class name of success-message
-      $("#widget-input-submit").replaceWith('<p class="success-message"> Success! We thank you for your contribution</p>');
+      //replace the widget__input__submit element to a thank you/success message with a class name of widget__successMessage
+      $(".widget__input__submit").replaceWith('<p class="widget__successMessage"> Success! We thank you for your contribution</p>');
       
-      //hide the widget-input
-      $("#widget-input").hide();
+      //hide the widget__input
+      $(".widget__input").hide();
       
-      //show the widget-thermometer span
-      $("#widget-thermometer").show();
+      //show the widget__thermometer__container span
+      $(".widget__thermometer__container").show();
       
-      //update the widget-total-funds html to the newTotal value
-      $("#widget-total-funds").text("$" + formattedTotal);
+      //update the widget__total__funds html to the newTotal value
+      $(".widget__total__funds").text("$" + formattedTotal);
       
       //if newTotal is less than 2000
       if (newTotal < 2000) {
-        //replace the widget-fundsCounter-overlay with a new element called widget-overlay-partial
-        $(".widget-fundsCounter-overlay").replaceWith('<div class="widget-overlay-partial"></div>');
-       
+        //replace the widget__thermometer__overlay with a new element called widget__overlay__partial
+        $(".widget__thermometer__overlay").replaceWith('<div class="widget__overlay__partial"></div>');
+    
         //if newTotal is equal to 2000 
       } else if (newTotal += 2000) {
         
-        //replace the widget-fundsCounter-overlay with a new element called wigdet-overlay-complete
-        $(".widget-fundsCounter-overlay").replaceWith('<div class="widget-overlay-complete"></div>');
+        //replace the widget__thermometer__overlay with a new element called wigdet__overlay__complete
+        $(".widget__thermometer__overlay").replaceWith('<div class="widget__overlay__complete"></div>');
       }
 
 

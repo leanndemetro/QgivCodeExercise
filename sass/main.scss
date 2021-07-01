@@ -1,0 +1,157 @@
+//theme color variable
+$themeColor: #784196;
+//image url (for main image) variable
+$imageUrl: url("https://i.imgur.com/EYFhJuS.png?1");
+//font-family variable
+$themeFont: 'Roboto', sans-serif;
+
+.widget {
+    width: 13rem;
+    height: 19.7rem;
+    border-style: solid;
+    border-width: 1.8px;
+    border-color: #dbdbdb;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    text-align: center;
+
+    &__logo {
+        content: $imageUrl;
+    }
+    &__body {
+        background-color: #F5F8F9;
+        width: 100.5%;
+        height: 62.3%;
+        margin-top: 20px;
+        margin-left: -10px;
+        position: fixed;
+    }
+    &__text {
+        font-family: $themeFont;
+        font-weight: bold;
+        padding: 10px;
+        font-size: 1.05rem;
+    }
+    &__total__funds{
+        margin-top: -15px;
+        font-family: $themeFont;
+        font-size: 1.3rem;
+        color: $themeColor;
+        font-weight: bold;
+    }
+    &__thermometer {
+        width: 80%;
+        height: .5rem;
+        border-style: solid;
+         border-width: 1px;
+         border-color: grey;
+         margin-left: 22px;
+         margin-top: -8px;
+         background-color: white;
+    }
+    &__thermometer__label {
+        font-family: $themeFont;
+        font-weight: 100, bold;
+        font-size: .7rem;
+        margin-top: -17px;
+    }
+    &__thermometer__overlay {
+        width: 65%;
+        height: .5rem;
+         margin-left: 21px;
+         margin-top: -8px;
+         background-color: $themeColor;
+    }
+    &__overlay__partial {
+        width: 75%;
+        height: .5rem;
+         margin-left: 21px;
+         margin-top: -8px;
+         background-color: $themeColor;
+    
+  }
+    &__overlay__complete {
+        width: 80%;
+        height: .5rem;
+         margin-left: 21px;
+         margin-top: -8px;
+         background-color: $themeColor;
+    }
+    &__submit {
+        padding: 8px;
+        margin-top: 10px;
+        width: 80%;
+        background-color: $themeColor;
+        color: white;
+        border-radius: 5px;
+        border-top: none;
+      border-right: none;
+      border-bottom: none;
+      border-left: none;
+      cursor: pointer;
+    }
+    &__submit:hover {
+        opacity: 0.8;
+    }
+    &__input {
+        margin-top: -20px;
+        padding: 8px;
+        width: 80%;
+        background-color: $themeColor;
+        color: white;
+        border-radius: 5px;
+        border-top: none;
+      border-right: none;
+      border-bottom: none;
+      border-left: none;
+      cursor: pointer;
+      text-align: center;
+  }
+    &__input:focus {
+        outline: none !important;
+        border:1px solid black;
+    
+  }
+    &__input__submit {
+        padding: 8px;
+        width: 80%;
+        background-color: $themeColor;
+        color: white;
+        border-radius: 5px;
+        border-top: none;
+      border-right: none;
+      border-bottom: none;
+      border-left: none;
+      cursor: pointer;
+        margin-top: 10px;
+  }
+    &__input__submit:hover {
+        opacity: 0.8;
+    
+  }
+    &__input__submit--hidden {
+       display: none;
+  }
+    &__successMessage {
+        padding: 10px;
+   font-family: $themeFont;
+   font-size: 1rem;
+}
+    }
+
+input {
+    &::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+    &[type=number] {
+        -moz-appearance: textfield;
+    }
+}

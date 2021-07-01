@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="css/main.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0" />
   <title>Code exercise - Qgiv</title>
@@ -22,40 +22,39 @@
 <body>
   <div class="container">
     <div class="widget">
-      <img src="https://i.imgur.com/EYFhJuS.png?1" alt="waterProject" class="widget-logo">
-      <div class="widget-body">
-        <p class="widget-text">
+      <img alt="waterProject" class="widget__logo">
+      <div class="widget__body">
+        <p class="widget__text">
           The Water Project -
           Global Water Initiative
         </p>
-        <span id="widget-thermometer">
-          <p id="widget-total-funds">
-
+        <span class="widget__thermometer__container">
+          <p class="widget__total__funds">
           </p>
           <div class="container">
             <div class="row">
               <div class="col">
-                <p class="widget-raised">
+                <p class="widget__thermometer__label">
                   0%
                 </p>
               </div>
               <div class="col">
-                <p class="widget-raised">
+                <p class="widget__thermometer__label">
                   RAISED
                 </p>
               </div>
               <div class="col">
-                <p class="widget-raised">
+                <p class="widget__thermometer__label">
                   100%
                 </p>
               </div>
             </div>
           </div>
-          <div class="widget-fundsCounter"></div>
-          <div class="widget-fundsCounter-overlay"></div>
+          <div class="widget__thermometer"></div>
+          <div class="widget__thermometer__overlay"></div>
         </span>
-        <input value="Give Now!" type="submit" id="widget-submit">
-        <input type="submit" id="widget-input-submit-hidden">
+        <input value="Give Now!" type="submit" class="widget__submit">
+        <input type="submit" class="widget__input__submit--hidden">
       </div>
 
     </div>
