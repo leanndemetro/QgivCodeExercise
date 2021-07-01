@@ -1,14 +1,13 @@
 init();
 
 function init() {
-  // create a method to parse out the local storage item called totalRaised
-  var displayedRaised = localStorage.getItem("totalRaised");
+ // create a local storage item that will store the totalRaised value
+ localStorage.setItem("totalRaised", "1185");
  // create a local storage item that will store the client's name
  localStorage.setItem("clientName", "the-water-project");
- //log this data to the console
- console.log("clientName: " + localStorage.getItem("clientName"));
- // create a local storage item that will store the client's donation goal
- localStorage.setItem("donationGoal", "2000");
+ // create a method to parse out the local storage item called totalRaised
+ var displayedRaised = localStorage.getItem("totalRaised");
+ 
 
   var displayedRaised = localStorage.getItem("totalRaised");
   //append it to the widget-total-funds element (with a dollar sign)
