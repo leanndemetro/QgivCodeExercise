@@ -1,17 +1,13 @@
 init();
 
 function init() {
- // create a local storage item that will store the totalRaised value
- localStorage.setItem("totalRaised", "1185");
- // create a local storage item that will store the client's name
+ // create a local storage item that will store the client's name (development only)
  localStorage.setItem("clientName", "the-water-project");
- // create a method to parse out the local storage item called totalRaised
+ //get the local storage item totalRaised, and set it equal to a variable called displayedRaised 
  var displayedRaised = localStorage.getItem("totalRaised");
- 
-
-  var displayedRaised = localStorage.getItem("totalRaised");
-  //append it to the widget-total-funds element (with a dollar sign)
+ //if displayedRaised has a value, 
   if (displayedRaised !== null) {
+      //append it to the widget__total__funds element
     $(".widget__total__funds").text("$" + displayedRaised + ".00");
   }
 };
@@ -39,6 +35,7 @@ $(document).ready(function () {
           //update local storage item raisedFunds
           localStorage.setItem("raisedFunds", (response.data.Raised));
         },
+        //on error, log error message to the console
         error: function(err) {
             console.log(err);
         }
@@ -48,10 +45,11 @@ $(document).ready(function () {
     //hide widget__thermometer__container
     $(".widget__thermometer__container").hide();
     
-    //change submit type to input with an id of widget__input and a placeholder of Enter Amount ($)
+    //change submit type to number with an id of widget__input and a placeholder of Enter Amount ($)
     $(".widget__submit").replaceWith('<input type="number" placeholder="Enter Amount ($)" class="widget__input">');
     
-    //create a submit button that appears beneath the input with the id of widget__input__submit
+    //create a submit button that replaces the hidden element widget__input__submit--hidden, 
+    //it will appear beneath the input with the id of widget__input__submit
     $(".widget__input__submit--hidden").replaceWith('<input value="Donate!" type="submit" class="widget__input__submit">');
     
     //disable widget__input__submit
@@ -71,29 +69,26 @@ $(document).ready(function () {
         }
     })
 
-    //create an onclick event that takes in the entered value and console logs it, and sets a local storage item called donationAmount to it's value
+    //create an onclick event that takes in the entered value, and sets a local storage item called donationAmount to it's value
     $(".widget__input__submit").click(function () {
       localStorage.setItem("donationAmount", $(".widget__input").val())
 
-      //parse out the totalRaised local storage item value, set it equal to a variable
+      //parse out the totalRaised local storage item value, set it equal to a variable called Raised
       let Raised = localStorage.getItem("totalRaised");
       
-      //parse out the donationAmount local storage item value, set it equal to a variable
-      let Donation = localStorage.getItem("donationAmount");
+      //parse out the donationAmount local storage item value, set it equal to a variable called Donation
+      let Donation = localStorage.getItem("donationAmount"); 
       
-      //create a math function that adds the two together
+      //create a math function that adds the two together as integers
       newTotal = parseInt(Raised) + parseInt(Donation);
       
-      //formats newTotal to inclue 2 decimal spaces and sets it equal to a new variable called formattedTotal
+      //format newTotal to inclue 2 decimal spaces and sets it equal to a new variable called formattedTotal
       var formattedTotal = newTotal.toFixed(2);
+        
+      //set the totalRaised local storage item to the newTotal value
+      localStorage.setItem("totalRaised", newTotal);
 
-      //perform an ajax POST request with local storage values pulled in for clientName, donationTotal, and current raisedFunds
-
-
-      //set the totalRaised local storage item to the newTotal value (comment out while in development)
-      // localStorage.setItem("totalRaised", newTotal);
-
-      //replace the widget__input__submit element to a thank you/success message with a class name of widget__successMessage
+      //replace the widget__input__submit element with a thank you/success message with a class name of widget__successMessage
       $(".widget__input__submit").replaceWith('<p class="widget__successMessage"> Success! We thank you for your contribution</p>');
       
       //hide the widget__input
@@ -117,11 +112,6 @@ $(document).ready(function () {
         $(".widget__thermometer__overlay").replaceWith('<div class="widget__overlay__complete"></div>');
       }
 
-
-
-
-
-      //append a hard coded $ before the donation input area
 
     });
   });
