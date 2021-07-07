@@ -10,7 +10,7 @@
 <img src="https://i.imgur.com/NLiKM9b.jpg">
 <a href="https://leanndemetro.github.io/QgivCodeExercise/"> Click here to view a deployed version via Github Pages<a> 
 <br></br>
-<a href="https://codepen.io/alyssademetro/pen/RwVPzdp"> Click here to view a deployed version via CodePen<a> 
+<a href="https://codepen.io/alyssademetro/pen/dyWMaJV"> Click here to view a deployed version via CodePen<a> 
 
 <h2>Table of Contents:</h2>
     
